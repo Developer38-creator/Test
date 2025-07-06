@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body { font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #f0f2f5; }
+        .login-container { background: white; padding: 40px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); text-align: center; }
+        h2 { margin-bottom: 20px; }
+        input { width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box; }
+        button { width: 100%; padding: 10px; background-color: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; }
+        button:hover { background-color: #0056b3; }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <h2>লগইন করুন</h2>
+        <!-- এই ফর্মটি জাভাস্ক্রিপ্ট দিয়ে নিয়ন্ত্রণ করা হবে -->
+        <form id="loginForm">
+            <input type="text" placeholder="ইউজারনেম" required>
+            <input type="password" placeholder="পাসওয়ার্ড" required>
+            <button type="submit">লগইন</button>
+        </form>
+    </div>
+
+    <script>
+        // ফর্মটি সিলেক্ট করা হচ্ছে
+        const loginForm = document.getElementById('loginForm');
+
+        // যখন ফর্ম সাবমিট করা হবে, তখন এই কোডটি কাজ করবে
+        loginForm.addEventListener('submit', function(event) {
+            // ফর্মের স্বাভাবিক আচরণ (পেজ রিলোড) বন্ধ করা হলো
+            event.preventDefault(); 
+            
+            // ব্যবহারকারী যা-ই ইনপুট দিক না কেন, তাকে main-page.html-এ পাঠানো হবে
+            console.log('লগইন বাটনে ক্লিক করা হয়েছে। পেজ পরিবর্তন করা হচ্ছে...');
+            window.location.href = 'main-page.html'; 
+        });
+    </script>
+
+</body>
+</html>
